@@ -18,5 +18,10 @@ pipeline {
                 }
            } 
         }
+        stage(run) {
+            steps {
+                sh './deploy.sh'
+            }
+        }
     }
 }
