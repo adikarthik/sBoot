@@ -10,7 +10,7 @@ pipeline {
                                 
         stage ('build') {
             steps {
-                dir ('sBoot_microservice') {
+                dir ('sBoot') {
                     sh 'mvn clean install'
                 }
                 
@@ -19,7 +19,7 @@ pipeline {
         
         stage ('test') {
             steps {
-                dir ('sBoot_microservice') {
+                dir ('sBoot') {
                     archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
                 }
                 
